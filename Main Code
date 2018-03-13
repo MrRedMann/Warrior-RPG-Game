@@ -13,20 +13,22 @@ monsters = ['Zombie', 'Skeleton']
 
 #BattleAttack
 def monsterAttack(attack, turn, monsterName, userHP, enemyHP):
-    if turn == 0:
-        print("[Enemy turn...]")
-        time.sleep(1)
-        print(str(monsterName + " damaged you " + str(int(attack)) + " DMG"))
-        userHP = userHP - attack
-        turn = 1
-    if turn == 1:
-        print("[Your turn...]")
-        time.sleep(1)
-        choice = input("[ATTACK] [HEAL] [RUN AWAY]")
-        if choice == 'ATTACK':
-            print(str("Player chose ATTACK"))
-            print(int(damage + "DMG"))
-            turn = 0
+    while enemyHP >= 1:
+        if turn == 0:
+            print("[Enemy turn...]")
+            time.sleep(1)
+            print(str(monsterName + " damaged you " + str(int(attack)) + " DMG"))
+            userHP = userHP - attack
+            turn = 1
+        if turn == 1:
+            print("[Your turn...]")
+            time.sleep(1)
+            choice = input("[ATTACK] [HEAL] [RUN AWAY]")
+            if choice == 'ATTACK':
+                print(str("Player chose ATTACK"))
+                print(int(damage + "DMG"))
+                turn = 0
+    return;
             
 
 #Random Monster Selector
