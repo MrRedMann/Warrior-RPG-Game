@@ -43,7 +43,7 @@ def monsterAttack(attack, turn, monsterName, userHP, enemyHP):
 #Random Monster Selector
 while True:
     main = input("[Input 'Start' to begin]").lower()
-    if main == 'start':
+    if main == 'Start' or 'start':
         while True:
             roll = random.randint(1,2)
             enemyHP = random.randint (10,20)
