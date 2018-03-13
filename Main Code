@@ -27,7 +27,7 @@ def monsterAttack(attack, turn, monsterName, userHP, enemyHP):
             choice = input("[ATTACK] [HEAL] [RUN AWAY]")
             if choice == 'ATTACK':
                 print(str("Player chose ATTACK"))
-                print(str(damage) + "DMG"))
+                print(str(damage) + "DMG") #Apparently this works
                 turn = 0
                 inputting = False
             elif choice == 'HEAL':
