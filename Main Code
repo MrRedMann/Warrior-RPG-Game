@@ -3,32 +3,41 @@ import time
 import random
 
 #Properties
-attack = int(0)
-damage = int(2)
-userHP = int(10)
-enemyHP = int(0)
+attack = 0
+damage = 2
+userHP = 10
+enemyHP = 0
 turn = 0
 active = 0
 monsters = ['Zombie', 'Skeleton']
 
 #BattleAttack
 def monsterAttack(attack, turn, monsterName, userHP, enemyHP):
-    while enemyHP >= 1:
-        if turn == 0:
-            print("[Enemy turn...]")
-            time.sleep(1)
-            print(str(monsterName + " damaged you " + str(int(attack)) + " DMG"))
-            userHP = userHP - attack
-            turn = 1
-        if turn == 1:
-            print("[Your turn...]")
-            time.sleep(1)
+    if turn == 0:
+        print("[Enemy turn...]")
+        time.sleep(1)
+        print(str(monsterName + " damaged you " + str(int(attack)) + " DMG"))
+        userHP = userHP - attack
+        turn = 1
+    if turn == 1:
+        print("[Your turn...]")
+        time.sleep(1)
+        inputting = True
+        while inputting:
             choice = input("[ATTACK] [HEAL] [RUN AWAY]")
             if choice == 'ATTACK':
                 print(str("Player chose ATTACK"))
                 print(int(damage + "DMG"))
                 turn = 0
-    return;
+                inputting = False
+            elif choice == 'HEAL':
+                pass
+            elif choice == 'RUN AWAY':
+                pass
+            else:
+                print('Invalid Response')
+                time.sleep(1)
+           
             
 
 #Random Monster Selector
@@ -41,4 +50,4 @@ while True:
             while enemyHP >= 1
                 if roll == 1:
                     active = 1
-                    monsterAttack(random.randint(1,3), int(0), random.choice(monsters), userHP, enemyHP)
+                    monsterAttack(random.randint(1,3), str(int(0)), random.choice(monsters), userHP, enemyHP)
